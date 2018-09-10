@@ -4,6 +4,7 @@
 // ===============================================================================
 var path = require("path");
 
+var freindData = require("../data/freinds.js");
 
 // ===============================================================================
 // ROUTING
@@ -18,6 +19,11 @@ module.exports = function(app) {
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
+
+  app.get("/api/friends", function(req, res) {
+    res.json(freindData);
+  });
+
 
  
   // If no matching route is found default to home
